@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quizzes Submission</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Submit a Language Quiz</h1>
+    <form id="quiz-form" action="/submit_quiz" method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="skill">Skill:</label><br>
+        <select id="skill" name="skill" required>
+            <option value="Grammar">Grammar</option>
+            <option value="Vocabulary">Vocabulary</option>
+            <option value="Reading">Reading</option>
+            <option value="Writing">Writing</option>
+            <option value="Listening">Listening</option>
+        </select><br>
+        <label for="level">Level:</label><br>
+        <select id="level" name="level" required>
+            <option value="A1-1">A1-1</option>
+            <option value="A1-2">A1-2</option>
+            <!-- Add the rest of the levels here -->
+            <option value="B2-4">B2-4</option>
+        </select><br>
+        <label for="content">Quiz Content (JSON):</label><br>
+        <textarea id="content" name="content" rows="10" cols="30" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
